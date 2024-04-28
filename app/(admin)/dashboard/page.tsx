@@ -1,9 +1,10 @@
+import CardProduct from '@/components/card/CardProduct'
 import React from 'react'
 
 export default function Dashboard() {
   return (
-    <div className='min-h-screen grid place-content-center'>
-      This is Dashboard
+    <div className='h-screen flex flex-wrap'>
+      This is dashboard
     </div>
   )
 }

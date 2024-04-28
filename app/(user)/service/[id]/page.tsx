@@ -1,4 +1,4 @@
-import CardProductDetail from "@/components/card/cardProductDetail";
+import CardProductDetail from "@/components/card/CardProductDetail";
 
 type PropsParams = {
     params: {
@@ -8,7 +8,7 @@ type PropsParams = {
 }
 const ENDPOINT = "https://fakestoreapi.com/products/";
 export const getData = async (id: number) => {
-  const res = await fetch(`${ENDPOINT}${id}`);
+  const res = await fetch(`${ENDPOINT}${id}`, {cache: "no-store"});
   const data = await res.json();
   return data;
 }  
@@ -20,7 +20,7 @@ export default async function Detail(props: PropsParams) {
       <CardProductDetail 
         title={data.title}
         image={data.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8oruMfmenl0Gf8qmyupis5g9F-YyXyh9K4xunOWJJtg&s"}
-        price={data.price}
+        description={data.description || "No Description"}
       />
     </div>
   )
