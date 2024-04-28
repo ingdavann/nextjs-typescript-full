@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavbarComponent from "@/components/navbar/NavbarComponent";
+import { Suspense } from "react";
+import Loading from "./loading";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import Error from "./error";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +20,14 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen flex flex-col">
         <header>
-          <NavbarComponent/>
+          <NavbarComponent />
         </header>
-        {children}
-        </body>
+        <ErrorBoundary errorComponent={Error}>
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
+        </ErrorBoundary>
+      </body>
     </html>
   );
 }

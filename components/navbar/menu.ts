@@ -12,5 +12,9 @@ export const MenuList = [
       name: "Services",
       path: "/service",
       active: false,
+    },{
+        name: "Enroll",
+        path: "/enroll",
+        active: false,
     }
   ]
