@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 import NavbarComponent from "@/components/navbar/NavbarComponent";
 import { Suspense } from "react";
 import Loading from "./loading";
