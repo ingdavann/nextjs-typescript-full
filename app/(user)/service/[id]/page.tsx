@@ -2,13 +2,13 @@ import CardProductDetail from "@/components/card/CardProductDetail";
 
 type PropsParams = {
     params: {
-        id: number
+        id: number 
     };
-    searchParam: any
+    // searchParam: any
 }
 const ENDPOINT = "https://fakestoreapi.com/products/";
-export const getData = async (id: number) => {
-  const res = await fetch(`${ENDPOINT}${id}`, {cache: "no-store"});
+const getData = async (id: number) => {
+  const res = await fetch(`${ENDPOINT}${id}`);
   const data = await res.json();
   return data;
 }  

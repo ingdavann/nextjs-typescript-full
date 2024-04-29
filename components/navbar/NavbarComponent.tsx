@@ -41,8 +41,8 @@ export default function NavbarComponent() {
       <NavbarToggle />
       <NavbarCollapse>
         {
-          menu.map((item) => (
-            <NavbarLink onClick={()=>updateMenu(item.path)} as={Link} href={item.path} active={item.active}>
+          menu.map((item, index) => (
+            <NavbarLink key={index} onClick={()=>updateMenu(item.path)} as={Link} href={item.path} active={item.active}>
               {item.name}
             </NavbarLink>
           ))
