@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
+import {inter, suwannaphum, localCustomFont} from './fonts'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen flex flex-col">
+      <body className={`${inter.variable} ${suwannaphum.variable} ${localCustomFont.variable}`}>
         <header>
           <NavbarComponent />
         </header>

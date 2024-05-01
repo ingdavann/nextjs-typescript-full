@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: var(--font-inter), var(--font-suwannaphum);
+}
+h1{
+    font-family: var(--font-kantumruyPro);
+}

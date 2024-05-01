@@ -14,9 +14,9 @@ export default function Home() {
   }
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Home page</h1>
+      <h1 className="text-2xl">Home page ទំព័រដើម</h1> 
       <button className="rounded-lg bg-blue-500 text-slate-50 p-3" onClick={()=>router.push('/enroll')}>
-        Go to Enroll
+        Go to Enroll ចុចមើល
       </button>
     </main>
   );
