@@ -5,7 +5,8 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
-import {inter, suwannaphum, localCustomFont} from './fonts'
+import { inter, suwannaphum, localCustomFont } from './fonts'
+
 
 export const metadata: Metadata = {
   title: "Vann Commerce",
@@ -22,18 +23,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${suwannaphum.variable} ${localCustomFont.variable}`}>
-        <header>
-          <NavbarComponent />
-        </header>
-        <ErrorBoundary errorComponent={Error}>
-          <Suspense fallback={<Loading />}>
-            {children}
-          </Suspense>
-        </ErrorBoundary>
-      </body>
-    </html>
+    <body className={`${inter.variable} ${suwannaphum.variable} ${localCustomFont.variable}`}>
+      <header>
+        <NavbarComponent />
+      </header>
+      <ErrorBoundary errorComponent={Error}>
+        <Suspense fallback={<Loading />}>
+          {children}
+        </Suspense>
+      </ErrorBoundary>
+    </body>
   );
 }
