@@ -8,3 +8,6 @@ body {
 h1{
     font-family: var(--font-kantumruyPro);
 }
+.none-scroll-bar::-webkit-scrollbar {
+	display: none;
+}
