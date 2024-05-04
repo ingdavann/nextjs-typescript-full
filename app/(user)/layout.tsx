@@ -7,6 +7,7 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
 import { inter, suwannaphum, localCustomFont } from './fonts'
 import StoreProvider from "../StoreProvider";
+import SessionWrapper from "../SessionWrapper";
 
 
 export const metadata: Metadata = {
@@ -26,17 +27,19 @@ export default function RootLayout({
 }>) {
 
   return (
-    <body className={`${inter.variable} ${suwannaphum.variable} ${localCustomFont.variable}`}>
-      <StoreProvider>
-        <header>
-          <NavbarComponent />
-        </header>
-        <ErrorBoundary errorComponent={Error}>
-          <Suspense fallback={<Loading />}>
-            {children}
-          </Suspense>
-        </ErrorBoundary>
-      </StoreProvider>
-    </body>
+    <SessionWrapper>
+      <body className={`${inter.variable} ${suwannaphum.variable} ${localCustomFont.variable}`}>
+        <StoreProvider>
+          <header>
+            <NavbarComponent />
+          </header>
+          <ErrorBoundary errorComponent={Error}>
+            <Suspense fallback={<Loading />}>
+              {children}
+            </Suspense>
+          </ErrorBoundary>
+        </StoreProvider>
+      </body>
+    </SessionWrapper>
   );
 }
