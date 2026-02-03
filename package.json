@@ -14,7 +14,7 @@
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.8",
     "formik": "^2.4.6",
-    "next": "14.2.3",
+    "next": "15.5.10",
     "next-auth": "^5.0.0-beta.17",
     "react": "^18",
     "react-data-table-component": "^7.6.2",
